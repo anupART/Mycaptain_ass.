@@ -1,16 +1,30 @@
+import operator
 
 
+def most_frequent(string):
+    count=dict()
+    for i in string:
+        if i in count:
+            count[i]+=1
+            
+        else:
+            count[i]=1
+        sorted_dict = dict( sorted(count.items(), key=operator.itemgetter(1),reverse=True))
+        
+    return sorted_dict
+print (most_frequent("Mississippi"))
 
-str=input("Enter a string :")
-print("string is ",str)
-count={}
-for x in str:
-    if x in count.keys():
-       count[x]+=1
-    else:
-        count[x]=1
-        # print(x,"=",count[x])
-print(count)
+
+# str=input("Enter a string :")
+# print("string is ",str)
+# count={}
+# for x in str:
+#     if x in count.keys():
+#        count[x]+=1
+#     else:
+#         count[x]=1
+#         # print(x,"=",count[x])
+# print(count)
 
 
 
@@ -28,14 +42,14 @@ print(count)
 # print(count)
 
 
-def function_freq(string):
-    d={}
-    for i in string:
-        if i in d:
-            d[i]+=1
-        else:
-            d[i]=1
-    return d
+# def function_freq(string):
+#     d={}
+#     for i in string:
+#         if i in d:
+#             d[i]+=1
+#         else:
+#             d[i]=1
+#     return d
 
-str=input("Enter the String :")
-print(function_freq(str))
+# str=input("Enter the String :")
+# print(function_freq(str))
